@@ -41,7 +41,7 @@ function createNote(key) {
 
   let lastTime = 0;
 
-  requestAnimationFrame(function animate(timeStamp) {
+  function animate(timeStamp) {
     if (timeStamp - lastTime >= 1000 / FPS) {
       const currentTop = parseFloat(note.style.top);
 
@@ -62,7 +62,8 @@ function createNote(key) {
     }
 
     requestAnimationFrame(animate);
-  });
+  };
+  animate(lastTime);
 };
 
 
